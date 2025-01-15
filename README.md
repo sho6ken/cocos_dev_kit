@@ -14,4 +14,6 @@
 
 - angle_util: 角度計算
 
+- copy_util: 物件複製
+
 - wait_util: 異步等待
