@@ -1,5 +1,11 @@
 # 工具列表
 
-## 單例模塊(singleton)
+## 擴充(extend)
 
-- singleton.ts: 單例
+- array_extend: 字串擴充
+
+- num_extend: 數字擴充
+
+- str_extend: 字串擴充
+
+## 單例(singleton)
