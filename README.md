@@ -9,3 +9,7 @@
 - str_extend: 字串擴充
 
 ## 單例(singleton)
+
+## 小工具(utility)
+
+- wait_util: 異步等待
