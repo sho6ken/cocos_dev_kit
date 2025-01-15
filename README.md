@@ -20,6 +20,8 @@
 
 - local_save: 本地存儲
 
+- per_frame: 分幀處理
+
 - rand_util: 隨機工具
 
 - url_util: 網址處理
