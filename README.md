@@ -20,6 +20,8 @@
 
 - local_save: 本地存儲
 
+- rand_util: 隨機工具
+
 - url_util: 網址處理
 
 - wait_util: 異步等待
