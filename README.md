@@ -1,2 +1,5 @@
-# cocos_dev_kit
-基於cocos creator的開發工具組
+# 工具列表
+
+## 單例模塊(singleton)
+
+- singleton.ts: 單例
