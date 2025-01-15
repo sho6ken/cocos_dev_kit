@@ -16,4 +16,6 @@
 
 - copy_util: 物件複製
 
+- json_util.ts: json處理
+
 - wait_util: 異步等待
