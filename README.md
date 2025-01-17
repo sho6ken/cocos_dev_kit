@@ -10,6 +10,8 @@
 
 ## 物件池
 
+- cmpt_pool: 組件池
+
 - obj_pool: 物件池
 
 ## 單例(singleton)
