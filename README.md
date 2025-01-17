@@ -8,6 +8,12 @@
 
 - str_extend: 字串擴充
 
+## 狀態機
+
+- fsm_base: 狀態機控制
+
+- fsm_state: 狀態機狀態
+
 ## 物件池
 
 - cmpt_pool: 組件池
