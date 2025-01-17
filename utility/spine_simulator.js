@@ -45,8 +45,7 @@ if (CC_EDITOR) {
             }
 
             this._updateCache(dt);
-        }
-        else {
+        } else {
             this._updateRealtime(dt);
         }
     }
