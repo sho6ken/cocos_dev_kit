@@ -16,10 +16,10 @@ export interface SingleObj {
     /**
      * 初始化
      */
-    onInit(...params: any[]): any;
+    init(...params: any[]): any;
 
     /**
      * 關閉
      */
-    onClose(...params: any[]): any;
+    close(...params: any[]): any;
 }

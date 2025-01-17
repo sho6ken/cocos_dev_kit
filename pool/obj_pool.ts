@@ -17,14 +17,14 @@ export abstract class ObjPool<TK, TV> implements SingleObj {
     /**
      * 初始化
      */
-    public onInit(): void {
+    public init(): void {
         this._pools = new Map();
     }
 
     /**
      * 關閉
      */
-    public onClose(): void {
+    public close(): void {
         Array.from(this._pools.keys()).forEach(key => this.clear(key), this);
         this._pools.clear();
     }
