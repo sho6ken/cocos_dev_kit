@@ -8,6 +8,10 @@
 
 - str_extend: 字串擴充
 
+## 物件池
+
+- obj_pool: 物件池
+
 ## 單例(singleton)
 
 ## 小工具(utility)
