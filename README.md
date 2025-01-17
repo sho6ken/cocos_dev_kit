@@ -32,7 +32,7 @@
 
 - focus_blur: 聚焦失焦
 
-- json_util.ts: json處理
+- json_util: json處理
 
 - local_save: 本地存儲
 
