@@ -36,9 +36,8 @@ export abstract class FsmState<T> {
 
     /**
      * 離開此狀態
-     * @param param 外部參數
      */
-    public abstract onLeave(...param: any[]): void;
+    public abstract onLeave(): void;
 
     /**
      * 狀態更新
