@@ -1,5 +1,9 @@
 # 工具列表
 
+## 資源(asset)
+
+- asset_module: 資源模塊
+
 ## 擴充(extend)
 
 - array_extend: 字串擴充
