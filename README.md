@@ -8,19 +8,21 @@
 
 - str_extend: 字串擴充
 
-## 狀態機
+## 狀態機(fsm)
 
 - fsm_base: 狀態機控制
 
 - fsm_state: 狀態機狀態
 
-## 物件池
+## 物件池(pool)
 
 - cmpt_pool: 組件池
 
 - obj_pool: 物件池
 
 ## 單例(singleton)
+
+- singleton: 單例
 
 ## 小工具(utility)
 
@@ -32,7 +34,7 @@
 
 - focus_blur: 聚焦失焦
 
-- json_util.ts: json處理
+- json_util: json處理
 
 - local_save: 本地存儲
 
