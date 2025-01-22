@@ -4,6 +4,12 @@
 
 - asset_module: 資源模塊
 
+## 音源(audio)
+
+- bgm_module: 音樂模塊
+
+- sfx_module: 音效模塊
+
 ## 擴充(extend)
 
 - array_extend: 字串擴充
