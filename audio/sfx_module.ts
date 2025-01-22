@@ -23,7 +23,7 @@ export class SfxModule implements SingleObj {
     /**
      * 音量
      */
-    private get vol(): number { return this._vol; }
+    public get vol(): number { return this._vol; }
 
     /**
      * 是否已暫停
