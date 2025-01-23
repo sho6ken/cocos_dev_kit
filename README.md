@@ -10,6 +10,10 @@
 
 - sfx_module: 音效模塊
 
+## 客製化組件(custom_cmpt)
+
+- replay_fx: 特效重播
+
 ## 擴充(extend)
 
 - array_extend: 字串擴充
