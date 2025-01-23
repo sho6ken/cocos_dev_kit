@@ -12,6 +12,10 @@
 
 ## 客製化組件(custom_cmpt)
 
+- canvas_adapt: canvas適配
+
+- desktop_adapt: 背景適配
+
 - rolling_img: 貼圖循環滾動
 
 - replay_fx: 特效重播
