@@ -34,7 +34,7 @@ export class EventModule extends EventBridge implements SingleObj {
     /**
      * 事件處理列表
      */
-    private _handlers: Map<EventKey, Map<Object, EventData[]>>;
+    private declare _handlers: Map<EventKey, Map<Object, EventData[]>>;
 
     /**
      * 初始化
