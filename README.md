@@ -14,6 +14,8 @@
 
 - replay_fx: 特效重播
 
+- spine_ctrl: spine控制
+
 ## 擴充(extend)
 
 - array_extend: 字串擴充
