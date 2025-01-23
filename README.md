@@ -10,6 +10,24 @@
 
 - sfx_module: 音效模塊
 
+## 客製化組件(custom_cmpt)
+
+- canvas_adapt: canvas適配
+
+- cantain_adapt: 內容物適配
+
+- desktop_adapt: 背景適配
+
+- rolling_img: 貼圖循環滾動
+
+- replay_fx: 特效重播
+
+- spine_ctrl: spine控制
+
+## 事件(event)
+
+- event_module: 事件模塊
+
 ## 擴充(extend)
 
 - array_extend: 字串擴充
