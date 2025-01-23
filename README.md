@@ -24,6 +24,12 @@
 
 - fsm_state: 狀態機狀態
 
+## 網路(network)
+
+- net_module: 連線模塊
+
+- net_node: 連線節點
+
 ## 物件池(pool)
 
 - cmpt_pool: 組件池
