@@ -20,6 +20,8 @@
 
 ## 事件(event)
 
+- event_module: 事件模塊
+
 ## 擴充(extend)
 
 - array_extend: 字串擴充

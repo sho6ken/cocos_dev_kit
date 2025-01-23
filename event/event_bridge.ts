@@ -6,7 +6,7 @@ export type EventKey = string;
 /**
  * 事件資料
  */
-export interface EventData {
+interface EventData {
     /**
      * 事件名稱
      */
