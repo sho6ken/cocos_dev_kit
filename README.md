@@ -14,6 +14,8 @@
 
 - canvas_adapt: canvas適配
 
+- cantain_adapt: 內容物適配
+
 - desktop_adapt: 背景適配
 
 - rolling_img: 貼圖循環滾動
