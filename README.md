@@ -12,6 +12,8 @@
 
 ## 客製化組件(custom_cmpt)
 
+- rolling_img: 貼圖循環滾動
+
 - replay_fx: 特效重播
 
 - spine_ctrl: spine控制
