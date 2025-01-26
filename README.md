@@ -20,6 +20,8 @@
 
 - rolling_img: 貼圖循環滾動
 
+- shake_cmpt: 物件震動
+
 - replay_fx: 特效重播
 
 - spine_ctrl: spine控制
