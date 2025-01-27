@@ -1,3 +1,6 @@
+import { EventModule } from "../event/event_module";
+import { Singleton } from "../singleton/singleton";
+
 /**
  * 不支援的瀏覽器
  */
@@ -8,24 +11,9 @@ const NO_SUP_WEB = [cc.sys.BROWSER_TYPE_UC];
  */
 export class FocusBlur {
     /**
-     * 聚焦事件
-     */
-    private declare _focus: Function;
-
-    /**
-     * 失焦事件
-     */
-    private declare _blur: Function;
-
-    /**
      * 
-     * @param focus 聚焦事件
-     * @param blur 失焦事件
      */
-    constructor(focus: Function, blur: Function) {
-        this._focus = focus;
-        this._blur = blur;
-
+    constructor() {
         // web
         if (cc.sys.isBrowser && NO_SUP_WEB.indexOf(<string>cc.sys.browserType) == -1) {
             cc.game.on(cc.game.EVENT_SHOW, this.onFocus.bind(this), this);
@@ -58,22 +46,19 @@ export class FocusBlur {
             window.removeEventListener("blur", this.onBlur.bind(this));
             return;
         }
-
-        this._focus = null;
-        this._blur = null;
     }
 
     /**
      * 聚焦
      */
     private onFocus(): void {
-        this._focus && this._focus();
+        Singleton.get(EventModule).emit("ViewFocus");
     }
 
     /**
      * 失焦
      */
     private onBlur(): void {
-        this._blur && this._blur();
+        Singleton.get(EventModule).emit("ViewBlur");
     }
 }
