@@ -10,7 +10,7 @@
 
 - sfx_module: 音效模塊
 
-## 客製化組件(custom_cmpt)
+## 客製化組件(custom)
 
 - canvas_adapt: canvas適配
 
@@ -20,7 +20,7 @@
 
 - rolling_img: 貼圖循環滾動
 
-- shake_cmpt: 物件震動
+- shake_obj: 物件震動
 
 - replay_fx: 特效重播
 

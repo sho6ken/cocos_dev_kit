@@ -1,16 +1,17 @@
 import { eventClass, eventFunc } from "../../event/event_attr";
 
-const { ccclass, property, menu } = cc._decorator;
+const { ccclass, property, menu, disallowMultiple } = cc._decorator;
 
 /**
- * 內容物適配
- * @summary https://www.jianshu.com/p/738a8f6a2ec1
+ * 背景適配
+ * @summary https://www.jianshu.com/p/24cba3de1e33
  * 強制使用訂寬高(show all), 方便其他適配元件計算變化
  */
 @ccclass
-@menu("custom cmpt/contain adapt")
+@disallowMultiple
+@menu("custom/desktop_adapt")
 @eventClass()
-export class ContainAdapt extends cc.Component {
+export class DesktopAdapt extends cc.Component {
     /**
      * 
      */
@@ -36,8 +37,10 @@ export class ContainAdapt extends cc.Component {
         let realW = this.node.width * scale;
         let realH = this.node.height * scale;
 
-        // 基於第一步計算的數據, 再做節點重置寬高
-        this.node.width *= (canvasW / realW);
-        this.node.height *= (canvasH / realH);
+        // 基於第一步計算的數據, 再做適配縮放
+        this.node.scale = Math.max(
+            canvasW / realW,
+            canvasH / realH,
+        );
     }
 }

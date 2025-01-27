@@ -1,12 +1,13 @@
-const { ccclass, property, requireComponent, menu } = cc._decorator;
+const { ccclass, property, requireComponent, menu, disallowMultiple } = cc._decorator;
 
 /**
  * 貼圖循環滾動
  * @summary 寬高需為2的次方, 且圖片的warp mode改成repeat, 與material改用rolling_img.mtl
  */
 @ccclass
+@disallowMultiple
 @requireComponent(cc.Sprite)
-@menu("custom cmpt/rolling img")
+@menu("custom/rolling_img")
 export class RollingImg extends cc.Component {
     /**
      * material

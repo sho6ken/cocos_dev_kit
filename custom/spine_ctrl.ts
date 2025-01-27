@@ -1,6 +1,6 @@
 import { WaitUtil } from "../utility/wait_util";
 
-const { ccclass, property, requireComponent, menu } = cc._decorator;
+const { ccclass, property, requireComponent, menu, disallowMultiple } = cc._decorator;
 
 /**
  * spine動畫事件
@@ -12,8 +12,9 @@ export type SpinAnimEvent = (name: string) => void;
  * spine控制
  */
 @ccclass
+@disallowMultiple
 @requireComponent(sp.Skeleton)
-@menu("custom cmpt/spine ctrl")
+@menu("custom/spine_ctrl")
 export class SpineCtrl extends cc.Component {
     /**
      * spine anim track

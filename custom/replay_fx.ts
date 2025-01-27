@@ -1,11 +1,12 @@
-const { ccclass, property, menu } = cc._decorator;
+const { ccclass, property, menu, disallowMultiple } = cc._decorator;
 
 /**
  * 特效重播
  * @summary 統一對子物件做操作
  */
 @ccclass
-@menu("custom cmpt/replay fx")
+@disallowMultiple
+@menu("custom/replay_fx")
 export class ReplayFX extends cc.Component {
     /**
      * 刷新

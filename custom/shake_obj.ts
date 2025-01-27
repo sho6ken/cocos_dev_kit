@@ -1,11 +1,12 @@
-const { ccclass, property, requireComponent, menu } = cc._decorator;
+const { ccclass, property, requireComponent, menu, disallowMultiple } = cc._decorator;
 
 /**
  * 物件震動
  */
 @ccclass
-@menu("custom cmpt/shake cmpt")
-export class ShakeCmpt extends cc.Component {
+@disallowMultiple
+@menu("custom/shake_obj")
+export class ShakeObj extends cc.Component {
     /**
      * 震動幅度
      */
@@ -13,10 +14,10 @@ export class ShakeCmpt extends cc.Component {
     private power: number = 5;
 
     /**
-     * 單次位移s
+     * 單次位移時間
      */
     @property({ type: cc.Float, min: 0.01 })
-    private time: number = 0.16;
+    private sec: number = 0.16;
 
     /**
      * 晃動複雜度
@@ -34,8 +35,13 @@ export class ShakeCmpt extends cc.Component {
      * @param count 震動次數
      */
     public async shake(count: number = 5): Promise<void> {
-        // 震動中或參數錯誤
-        if (this._tween || count <= 1 || this.power <= 0 || this.time <= 0) {
+        // 參數錯誤
+        if (count <= 1 || this.power <= 0 || this.sec <= 0) {
+            return;
+        }
+
+        // 震動中
+        if (this._tween) {
             return;
         }
 
@@ -48,10 +54,10 @@ export class ShakeCmpt extends cc.Component {
     
                 // -1是讓最後一動要回到原位
                 for (let i = 0; i < count - 1; i++) {
-                    this._tween.to(this.time, { position: list.random() });
+                    this._tween.to(this.sec, { position: list.random() });
                 }
     
-                this._tween.to(this.time, { position: cc.Vec3.zero });
+                this._tween.to(this.sec, { position: cc.Vec3.zero });
                 this._tween.call(() => resolve());
                 this._tween.start();
             });

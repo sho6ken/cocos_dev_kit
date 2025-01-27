@@ -13,7 +13,8 @@ export interface SingleType<T extends SingleObj> {
     /**
      * 實例
      * @summary 當物件為component時使用, 可避免另外創建新的單例物件
-     * @example protected onLoad(): void { inst = this; }
+     * @example 
+     * protected onLoad(): void { inst = this; }
      */
     inst?: T;
 

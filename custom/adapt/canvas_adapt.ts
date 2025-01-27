@@ -1,7 +1,7 @@
 import { EventModule } from "../../event/event_module";
 import { Singleton } from "../../singleton/singleton";
 
-const { ccclass, property, menu } = cc._decorator;
+const { ccclass, property, menu, disallowMultiple } = cc._decorator;
 
 /**
  * canvas適配
@@ -9,7 +9,8 @@ const { ccclass, property, menu } = cc._decorator;
  * 強制使用訂寬高(show all), 方便其他適配元件計算變化
  */
 @ccclass
-@menu("custom cmpt/canvas adapt")
+@disallowMultiple
+@menu("custom/canvas_adapt")
 export class CanvasAdapt extends cc.Component {
     /**
      * 

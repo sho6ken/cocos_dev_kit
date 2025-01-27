@@ -4,7 +4,8 @@
 interface String {
     /**
      * 格式化
-     * @example `{0}.{1}.{2}`.format(`a`, 9);  // a.9.{2}
+     * @example 
+     * `{0}.{1}.{2}`.format(`a`, 9) => `a.9.{2}`
      */
     format(...params: (string | number)[]): string;
 
