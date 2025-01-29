@@ -46,6 +46,10 @@
 
 - fsm_state: 狀態機狀態
 
+## 除錯資訊(logger)
+
+- logger: 除錯資訊
+
 ## 網路(network)
 
 - net_module: 連線模塊
