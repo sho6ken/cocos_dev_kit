@@ -20,6 +20,8 @@
 
 - rolling_img: 貼圖循環滾動
 
+- main_timer: 全局計時器
+
 - shake_obj: 物件震動
 
 - replay_fx: 特效重播
