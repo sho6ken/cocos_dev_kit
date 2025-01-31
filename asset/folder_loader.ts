@@ -6,25 +6,26 @@ import { AssetLoadOpt } from "./asset_data";
 export class FolderLoader {
     /**
      * 加載
+     * @param type 資源種類
      * @param opt 加載資源參數
      * @summary 非bundle則從resources中取得
      */
-    public async load<T extends cc.Asset>(opt: AssetLoadOpt): Promise<{ assetPath: string, asset: T }[]> {
+    public async load<T extends cc.Asset>(type: typeof cc.Asset, opt: AssetLoadOpt): Promise<{ assetPath: string, asset: T }[]> {
         return new Promise((resolve, reject) => {
             let loader = opt.bundlePath ? cc.assetManager.getBundle(opt.bundlePath) : cc.resources;
 
             if (!loader) {
-                console.warn(`load folder ${opt.path} failed, loader is null`, opt.bundlePath, opt.type.name);
+                console.warn(`load folder ${opt.path} failed, loader is null`, opt.bundlePath, type.name);
                 return;
             }
 
-            loader.loadDir(opt.path, opt.type, (err, assets) => {
+            loader.loadDir(opt.path, type, (err, assets) => {
                 if (err) {
-                    console.error(`load folder ${opt.path} failed`, opt.bundlePath, opt.type.name, err);
+                    console.error(`load folder ${opt.path} failed`, opt.bundlePath, type.name, err);
                     reject(err);
                 }
 
-                let info = loader.getDirWithPath(opt.path, opt.type);
+                let info = loader.getDirWithPath(opt.path, type);
                 let res = [];
 
                 assets.forEach((asset, idx) => {

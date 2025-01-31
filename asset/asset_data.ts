@@ -24,11 +24,6 @@ export interface AssetData {
  */
 export interface AssetLoadOpt {
     /**
-     * 資源種類
-     */
-    type: typeof cc.Asset;
-
-    /**
      * 加載路徑
      */
     path: string;
@@ -37,4 +32,9 @@ export interface AssetLoadOpt {
      * bundle路徑
      */
     bundlePath?: string;
+
+    /**
+     * 是否常駐不釋放
+     */
+    hold: boolean;
 }
