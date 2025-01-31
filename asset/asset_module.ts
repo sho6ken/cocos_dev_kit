@@ -73,12 +73,12 @@ export class AssetModule implements SingleObj {
 
     /**
      * 取得資源
+     * @param type 資源種類
      * @param opt 加載資源參數
-     * @param hold 是否常駐
      * @summary 如果資源在bundle內, 則需先加載bundle後再取得資源
      */
-    public async getAsset<T extends cc.Asset>(opt: AssetLoadOpt, hold: boolean): Promise<T> {
-        return await this._asset.get(opt, hold);
+    public async getAsset<T extends cc.Asset>(type: typeof cc.Asset, opt: AssetLoadOpt): Promise<T> {
+        return await this._asset.get(type, opt);
     }
 
     /**
@@ -91,14 +91,14 @@ export class AssetModule implements SingleObj {
 
     /**
      * 加載資料夾
+     * @param type 資源種類
      * @param opt 加載資源參數
-     * @param hold 是否常駐
      */
-    public async loadFolder(opt: AssetLoadOpt, hold: boolean): Promise<void> {
-        let list = await this._folder.load(opt);
+    public async loadFolder(type: typeof cc.Asset, opt: AssetLoadOpt): Promise<void> {
+        let list = await this._folder.load(type, opt);
 
         list.forEach(elm => {
-            this._asset.add(elm.asset, elm.assetPath, hold);
+            this._asset.add(elm.asset, elm.assetPath, opt.hold);
         }, this);
     }
 

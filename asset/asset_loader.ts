@@ -54,11 +54,11 @@ export class AssetLoader {
 
     /**
      * 取得資源
+     * @param type 資源種類
      * @param opt 加載資源參數
-     * @param hold 是否常駐
      * @summary 如果資源在bundle內, 則需先加載bundle後再取得資源
      */
-    public async get<T extends cc.Asset>(opt: AssetLoadOpt, hold: boolean): Promise<T> {
+    public async get<T extends cc.Asset>(type: typeof cc.Asset, opt: AssetLoadOpt): Promise<T> {
         if (this._assets.has(opt.path)) {
             let data = this._assets.get(opt.path);
             data.expire = this._expire;
@@ -66,29 +66,30 @@ export class AssetLoader {
             return data.asset as T;
         }
 
-        let asset = await this.load(opt);
-        this.add(asset, opt.path, hold);
+        let asset = await this.load(type, opt);
+        this.add(asset, opt.path, opt.hold);
 
         return asset as T;
     }
 
     /**
      * 加載
+     * @param type 資源種類
      * @param opt 加載資源參數
      * @summary 非bundle則從resources中取得
      */
-    private async load<T extends cc.Asset>(opt: AssetLoadOpt): Promise<T> {
+    private async load<T extends cc.Asset>(type: typeof cc.Asset, opt: AssetLoadOpt): Promise<T> {
         return new Promise((resolve, reject) => {
             let loader = opt.bundlePath ? cc.assetManager.getBundle(opt.bundlePath) : cc.resources;
 
             if (!loader) {
-                console.warn(`load asset ${opt.path} failed, loader is null`, opt.bundlePath, opt.type.name);
+                console.warn(`load asset ${opt.path} failed, loader is null`, opt.bundlePath, type.name);
                 return;
             }
 
-            loader.load(opt.path, opt.type, (err, asset) => {
+            loader.load(opt.path, type, (err, asset) => {
                 if (err) {
-                    console.error(`load asset ${opt.path} failed`, opt.bundlePath, opt.type.name, err);
+                    console.error(`load asset ${opt.path} failed`, opt.bundlePath, type.name, err);
                     reject(err);
                 }
 
