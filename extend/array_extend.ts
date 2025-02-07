@@ -47,7 +47,7 @@ interface Array<T> {
  * 
  */
 Array.prototype.has = function<T>(this: Array<T>, item: T): boolean {
-    return this.indexOf(item) != -1;
+    return this.includes(item);
 }
 
 /**

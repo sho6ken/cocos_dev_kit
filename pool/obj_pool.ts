@@ -109,7 +109,7 @@ export abstract class ObjPool<TK, TV> implements SingleObj {
             (value as cc.Node)?.removeFromParent();
 
             // 重複回收
-            if (!items || items.indexOf(value) != -1) {
+            if (!items || items.includes(value)) {
                 value = null;
                 return;
             }

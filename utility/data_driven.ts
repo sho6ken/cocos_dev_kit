@@ -58,7 +58,7 @@ export class DataDriven<T> {
      * @param event 事件回調
      */
     public on(event: (data: T) => void): void {
-        if (this._events.indexOf(event) == -1) {
+        if (!this._events.includes(event)) {
             this._events.push(event);
         }
     }
