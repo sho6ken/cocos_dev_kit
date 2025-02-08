@@ -29,7 +29,8 @@ export class CopyUtil {
             for (let value of src) {
                 res.push(this.copyDeep(value));
             }
-        } else {
+        } 
+        else {
             res = {};
 
             for (let key in src) {

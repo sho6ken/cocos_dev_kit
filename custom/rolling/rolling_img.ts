@@ -72,7 +72,8 @@ export class RollingImg extends cc.Component {
 
         if (this._offsetX > 1) {
             this._offsetX -= 1;
-        } else if (this._offsetX < -1) {
+        } 
+        else if (this._offsetX < -1) {
             this._offsetX += 1;
         }
 
@@ -91,7 +92,8 @@ export class RollingImg extends cc.Component {
 
         if (this._offsetY > 1) {
             this._offsetY -= 1;
-        } else if (this._offsetY < -1) {
+        } 
+        else if (this._offsetY < -1) {
             this._offsetY += 1;
         }
 
