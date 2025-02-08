@@ -15,7 +15,7 @@ export class FocusBlur {
      */
     constructor() {
         // web
-        if (cc.sys.isBrowser && NO_SUP_WEB.indexOf(<string>cc.sys.browserType) == -1) {
+        if (cc.sys.isBrowser && !NO_SUP_WEB.includes(<string>cc.sys.browserType)) {
             cc.game.on(cc.game.EVENT_SHOW, this.onFocus.bind(this), this);
             cc.game.on(cc.game.EVENT_HIDE, this.onBlur.bind(this), this);
             return;
@@ -34,7 +34,7 @@ export class FocusBlur {
      */
     public close(): void {
         // web
-        if (cc.sys.isBrowser && NO_SUP_WEB.indexOf(<string>cc.sys.browserType) == -1) {
+        if (cc.sys.isBrowser && !NO_SUP_WEB.includes(<string>cc.sys.browserType)) {
             cc.game.off(cc.game.EVENT_SHOW, this.onFocus.bind(this), this);
             cc.game.off(cc.game.EVENT_HIDE, this.onBlur.bind(this), this);
             return;

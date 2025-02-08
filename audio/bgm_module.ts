@@ -137,7 +137,8 @@ export class BgmModule implements SingleObj {
         // 漸變至無聲後播放
         if (cc.audioEngine.isMusicPlaying()) {
             this.fadeVol(sec, 1, 0, () => execute());
-        } else {
+        } 
+        else {
             execute();
         }
     }

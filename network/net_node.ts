@@ -266,7 +266,8 @@ export class NetNode {
                 if (this._socket.sendMsg(buf)) {
                     console.log(`send msg ${cmd} succeed`, this._connOpt.addr, buf);
                     return true;
-                } else {
+                } 
+                else {
                     console.warn(`send msg ${cmd} failed`, this._connOpt.addr, buf);
                     return false;
                 }

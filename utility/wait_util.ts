@@ -10,7 +10,8 @@ export class WaitUtil {
         await new Promise(resolve => {
             if (cmpt) {
                 cmpt.scheduleOnce(resolve, ms / 1000);
-            } else {
+            } 
+            else {
                 window.setTimeout(resolve, ms);
             }
         });
@@ -24,7 +25,8 @@ export class WaitUtil {
         await new Promise(resolve => {
             if (cmpt) {
                 cmpt.scheduleOnce(resolve, sec);
-            } else {
+            } 
+            else {
                 window.setTimeout(resolve, sec * 1000);
             }
         });

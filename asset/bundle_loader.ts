@@ -34,6 +34,7 @@ export class BundleLoader {
         let bundle = this._bundles.get(path);
         bundle.releaseAll();
         cc.assetManager.removeBundle(bundle);
+        this._bundles.delete(path);
     }
 
     /**
@@ -52,6 +53,7 @@ export class BundleLoader {
                     reject();
                 }
 
+                this._bundles.set(path, bundle);
                 resolve(bundle);
             });
         });
