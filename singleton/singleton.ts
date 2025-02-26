@@ -58,11 +58,6 @@ export class Singleton {
             return;
         }
 
-        if (item.hold) {
-            console.warn(`close single obj ${name} failed, item is hold`);
-            return;
-        }
-
         item.close();
         item = null;
         this._items.delete(name);

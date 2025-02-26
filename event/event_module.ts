@@ -26,12 +26,6 @@ export class EventModule extends EventBridge implements SingleObj {
     public get name(): string { return this.constructor.name; }
 
     /**
-     * 常駐物件
-     * @summary 不會因閒置被釋放
-     */
-    public get hold(): boolean { return true; }
-
-    /**
      * 事件處理列表
      */
     private declare _handlers: Map<EventKey, Map<Object, EventData[]>>;

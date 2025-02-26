@@ -30,12 +30,6 @@ export abstract class TableData<T extends TableStruct> implements SingleObj {
     public get name(): string { return this.constructor.name; }
 
     /**
-     * 常駐物件
-     * @summary 不會因閒置被釋放
-     */
-    public get hold(): boolean { return true; }
-
-    /**
      * 數據資料
      */
     protected _items = new Map<number, T>();

@@ -27,12 +27,6 @@ export class MainTimer extends cc.Component implements SingleObj {
     public static get inst(): MainTimer { return this._inst; }
 
     /**
-     * 常駐物件
-     * @summary 不會因閒置被釋放
-     */
-    public get hold(): boolean { return true; }
-
-    /**
      * 當前的時間縮放
      */
     private _currScale: number = 1;

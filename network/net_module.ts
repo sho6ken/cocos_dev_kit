@@ -12,12 +12,6 @@ export class NetModule implements SingleObj {
     public get name(): string { return this.constructor.name; }
 
     /**
-     * 常駐物件
-     * @summary 不會因閒置被釋放
-     */
-    public get hold(): boolean { return true; }
-
-    /**
      * 連線頻道
      */
     private declare _channels: Map<number, NetNode>;
