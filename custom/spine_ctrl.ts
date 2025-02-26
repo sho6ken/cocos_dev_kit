@@ -14,7 +14,7 @@ export type SpinAnimEvent = (name: string) => void;
 @ccclass
 @disallowMultiple
 @requireComponent(sp.Skeleton)
-@menu("custom/spine_ctrl")
+@menu(`custom/spine_ctrl`)
 export class SpineCtrl extends cc.Component {
     /**
      * spine anim track

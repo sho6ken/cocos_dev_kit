@@ -6,7 +6,7 @@ export class CopyUtil {
      * 淺拷貝
      */
     public static copy<T>(src: T): T {
-        if (src == null || typeof src != "object" || src instanceof RegExp) {
+        if (src == null || typeof src != `object` || src instanceof RegExp) {
             return null;
         }
 
@@ -17,7 +17,7 @@ export class CopyUtil {
      * 深拷貝
      */
     public static copyDeep<T>(src: T): T {
-        if (src == null || typeof src != "object" || src instanceof RegExp) {
+        if (src == null || typeof src != `object` || src instanceof RegExp) {
             return null;
         }
 

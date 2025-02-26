@@ -23,8 +23,8 @@ export class FocusBlur {
 
         // 原生
         if (window && window.addEventListener) {
-            window.addEventListener("focus", this.onFocus.bind(this));
-            window.addEventListener("blur", this.onBlur.bind(this));
+            window.addEventListener(`focus`, this.onFocus.bind(this));
+            window.addEventListener(`blur`, this.onBlur.bind(this));
             return;
         }
     }
@@ -42,8 +42,8 @@ export class FocusBlur {
 
         // 原生
         if (window && window.removeEventListener) {
-            window.removeEventListener("focus", this.onFocus.bind(this));
-            window.removeEventListener("blur", this.onBlur.bind(this));
+            window.removeEventListener(`focus`, this.onFocus.bind(this));
+            window.removeEventListener(`blur`, this.onBlur.bind(this));
             return;
         }
     }
@@ -52,13 +52,13 @@ export class FocusBlur {
      * 聚焦
      */
     private onFocus(): void {
-        Singleton.get(EventModule).emit("ViewFocus");
+        Singleton.get(EventModule).emit(`ViewFocus`);
     }
 
     /**
      * 失焦
      */
     private onBlur(): void {
-        Singleton.get(EventModule).emit("ViewBlur");
+        Singleton.get(EventModule).emit(`ViewBlur`);
     }
 }

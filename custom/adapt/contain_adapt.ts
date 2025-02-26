@@ -9,7 +9,7 @@ const { ccclass, property, menu, disallowMultiple } = cc._decorator;
  */
 @ccclass
 @disallowMultiple
-@menu("custom/contain_adapt")
+@menu(`custom/contain_adapt`)
 @eventClass()
 export class ContainAdapt extends cc.Component {
     /**
@@ -22,7 +22,7 @@ export class ContainAdapt extends cc.Component {
     /**
      * 校正
      */
-    @eventFunc("ViewResize")
+    @eventFunc(`ViewResize`)
     private adjust(): void {
         let size = cc.view.getCanvasSize();
         let canvasW = size.width;
