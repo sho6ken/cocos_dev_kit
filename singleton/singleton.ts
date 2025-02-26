@@ -26,7 +26,7 @@ export class Singleton {
         this._items.set(name, inst);
 
         console.log(`single obj ${name} created`);
-        inst.init();
+        inst.init && inst.init();
 
         return inst;
     }
@@ -58,7 +58,7 @@ export class Singleton {
             return;
         }
 
-        item.close();
+        item.close && item.close();
         item = null;
         this._items.delete(name);
 
