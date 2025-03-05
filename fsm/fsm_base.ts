@@ -32,19 +32,24 @@ export class FsmBase<T> {
     /**
      * 
      * @param owner 狀態機持有人
-     * @param states 狀態列表
      */
-    constructor(owner: T, ...states: FsmState<T>[]) {
+    constructor(owner: T) {
         if (owner == null) {
             console.warn(`create fsm failed, owner is null`);
             return;
         }
 
         this._owner = owner;
+    }
 
+    /**
+     * 新增狀態
+     * @param states 狀態列表
+     */
+    public addStates(...states: FsmState<T>[]): FsmBase<T> {
         if (!states || states.length <= 0) {
-            console.warn(`create fsm failed, states are null`, owner);
-            return;
+            console.warn(`create fsm failed, states are null`, this.owner);
+            return null;
         }
 
         let len = states.length;
@@ -53,19 +58,21 @@ export class FsmBase<T> {
             let state = states[i];
 
             if (state == null) {
-                console.warn(`create fsm failed, state ${i} is null`, owner);
-                return;
+                console.warn(`create fsm failed, state ${i} is null`, this.owner);
+                return null;
             }
 
             let id = state.id;
 
             if (this._states.has(id)) {
-                console.warn(`create fsm failed, state ${i} repeat`, owner);
-                return;
+                console.warn(`create fsm failed, state ${i} repeat`, this.owner);
+                return null;
             }
 
             this._states.set(id, state);
         }
+
+        return this;
     }
 
     /**
