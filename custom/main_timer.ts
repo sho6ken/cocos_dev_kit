@@ -14,7 +14,7 @@ type TimerUpdate = (dt: number) => void;
  */
 @ccclass
 @disallowMultiple
-@menu("custom/main_timer")
+@menu(`custom/main_timer`)
 export class MainTimer extends cc.Component implements SingleObj {
     /**
      * 實例
@@ -25,12 +25,6 @@ export class MainTimer extends cc.Component implements SingleObj {
      * 實例
      */
     public static get inst(): MainTimer { return this._inst; }
-
-    /**
-     * 常駐物件
-     * @summary 不會因閒置被釋放
-     */
-    public get hold(): boolean { return true; }
 
     /**
      * 當前的時間縮放
@@ -151,7 +145,7 @@ export class MainTimer extends cc.Component implements SingleObj {
         this._currScale = value;
 
         // 事件
-        Singleton.get(EventModule).emit("TimerScale", value);
+        Singleton.get(EventModule).emit(`TimerScale`, value);
     }
 
     /**

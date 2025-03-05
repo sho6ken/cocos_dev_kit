@@ -7,7 +7,7 @@ const { ccclass, property, requireComponent, menu, disallowMultiple } = cc._deco
 @ccclass
 @disallowMultiple
 @requireComponent(cc.Sprite)
-@menu("custom/rolling_img")
+@menu(`custom/rolling_img`)
 export class RollingImg extends cc.Component {
     /**
      * material
@@ -77,7 +77,7 @@ export class RollingImg extends cc.Component {
             this._offsetX += 1;
         }
 
-        this._mtl.setProperty("offsetX", this._offsetX);
+        this._mtl.setProperty(`offsetX`, this._offsetX);
     }
 
     /**
@@ -97,7 +97,7 @@ export class RollingImg extends cc.Component {
             this._offsetY += 1;
         }
 
-        this._mtl.setProperty("offsetY", this._offsetY);
+        this._mtl.setProperty(`offsetY`, this._offsetY);
     }
 
     /**

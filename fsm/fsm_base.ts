@@ -3,7 +3,7 @@ import { FsmState } from "./fsm_state";
 /**
  * 狀態機控制
  */
-export abstract class FsmBase<T> {
+export class FsmBase<T> {
     /**
      * 狀態機持有人
      */

@@ -44,4 +44,13 @@ export abstract class FsmState<T> {
      * @summary 當前為此狀態時才會執行
      */
     public abstract onDraw(dt: number): void;
+
+    /**
+     * 變更狀態
+     * @param id 狀態編號
+     * @param params 新狀態onEnter()使用的參數
+     */
+    protected changeState(id: number, ...params: any[]): void {
+        this._ctrl.changeState(id, ...params);
+    }
 }

@@ -6,37 +6,37 @@ const { ccclass, property, menu, disallowMultiple } = cc._decorator;
  */
 @ccclass
 @disallowMultiple
-@menu("custom/replay_fx")
+@menu(`custom/replay_fx`)
 export class ReplayFX extends cc.Component {
     /**
      * 刷新
      */
-    @property({ type: cc.Boolean, displayName: "refresh" })
+    @property({ type: cc.Boolean, displayName: `refresh` })
     private get refresh(): boolean { return false; }
     private set refresh(value: boolean) { this.search(); } 
 
     /**
      * 3d粒子
      */
-    @property({ type: [cc.ParticleSystem3D], displayName: "3d particles" })
+    @property({ type: [cc.ParticleSystem3D], displayName: `3d particles` })
     private p3d: cc.ParticleSystem3D[] = [];
 
     /**
      * 2d粒子
      */
-    @property({ type: [cc.ParticleSystem], displayName: "2d particles" })
+    @property({ type: [cc.ParticleSystem], displayName: `2d particles` })
     private p2d: cc.ParticleSystem[] = [];
 
     /**
      * 骨骼動畫
      */
-    @property({ type: [sp.Skeleton], displayName: "spines" })
+    @property({ type: [sp.Skeleton], displayName: `spines` })
     private spines: sp.Skeleton[] = [];
 
     /**
      * 動畫
      */
-    @property({ type: [cc.Animation], displayName: "animations" })
+    @property({ type: [cc.Animation], displayName: `animations` })
     private anim: cc.Animation[] = [];
 
     /**

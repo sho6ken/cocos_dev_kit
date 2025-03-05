@@ -7,7 +7,7 @@ export class UrlUtil {
      * @param key 參數名稱
      */
     public static query(key: string): string {
-        let reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i");
+        let reg = new RegExp(`(^|&)` + key + `=([^&]*)(&|$)`, `i`);
         var list = window.location.search.substring(1).match(reg);
 
         // 當url帶有中文時的轉碼
@@ -43,8 +43,8 @@ export class UrlUtil {
         }
 
         var xhr = cc.loader.getXMLHttpRequest();
-        xhr.open(post ? "POST" : "GET", url, true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.open(post ? `POST` : `GET`, url, true);
+        xhr.setRequestHeader(`Content-Type`, `application/x-www-form-urlencoded`);
 
         xhr.onreadystatechange = function(): void {
             if (xhr.readyState != 4 || xhr.status != 200) {

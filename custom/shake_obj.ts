@@ -5,7 +5,7 @@ const { ccclass, property, requireComponent, menu, disallowMultiple } = cc._deco
  */
 @ccclass
 @disallowMultiple
-@menu("custom/shake_obj")
+@menu(`custom/shake_obj`)
 export class ShakeObj extends cc.Component {
     /**
      * 震動幅度

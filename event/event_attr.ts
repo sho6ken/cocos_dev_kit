@@ -37,7 +37,7 @@ export function eventClass(): Function {
      * @summary 在component的enable時註冊監聽, 在disable時註銷監聽
      */
     return function(host: any): void {
-        rewrite(host, "onEnable", "onDisable");
+        rewrite(host, `onEnable`, `onDisable`);
     }
 }
 

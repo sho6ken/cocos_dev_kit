@@ -10,7 +10,7 @@ const { ccclass, property, menu, disallowMultiple } = cc._decorator;
  */
 @ccclass
 @disallowMultiple
-@menu("custom/canvas_adapt")
+@menu(`custom/canvas_adapt`)
 export class CanvasAdapt extends cc.Component {
     /**
      * 
@@ -23,7 +23,7 @@ export class CanvasAdapt extends cc.Component {
 
         // 視窗變化事件
         cc.view.setResizeCallback(() => {
-            Singleton.get(EventModule).emit("ViewResize");
+            Singleton.get(EventModule).emit(`ViewResize`);
         });
     }
 }

@@ -69,7 +69,7 @@ Number.prototype.thousand = function(this: number): string {
         return value.toString();
     }
 
-    const symbols = ["", "K", "M", "G"];
+    const symbols = [``, `K`, `M`, `G`];
     
     let idx = Math.floor(Math.log(value) / Math.log(k));
     let num = value / Math.pow(k, idx);

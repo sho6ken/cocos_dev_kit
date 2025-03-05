@@ -26,7 +26,7 @@ export class Singleton {
         this._items.set(name, inst);
 
         console.log(`single obj ${name} created`);
-        inst.init();
+        inst.init && inst.init();
 
         return inst;
     }
@@ -58,12 +58,7 @@ export class Singleton {
             return;
         }
 
-        if (item.hold) {
-            console.warn(`close single obj ${name} failed, item is hold`);
-            return;
-        }
-
-        item.close();
+        item.close && item.close();
         item = null;
         this._items.delete(name);
 
