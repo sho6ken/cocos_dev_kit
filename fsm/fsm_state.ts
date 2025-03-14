@@ -29,21 +29,26 @@ export abstract class FsmState<T> {
     }
 
     /**
+     * 關閉
+     */
+    public close(): void {}
+
+    /**
      * 進入此狀態
      * @param params 外部參數
      */
-    public abstract onEnter(...params: any[]): void;
+    public onEnter(...params: any[]): void {};
 
     /**
      * 離開此狀態
      */
-    public abstract onLeave(): void;
+    public onLeave(): void {};
 
     /**
      * 狀態更新
      * @summary 當前為此狀態時才會執行
      */
-    public abstract onDraw(dt: number): void;
+    public onDraw(dt: number): void {};
 
     /**
      * 變更狀態
