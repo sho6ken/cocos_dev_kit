@@ -43,6 +43,18 @@ export class FsmBase<T> {
     }
 
     /**
+     * 關閉
+     */
+    public close(): void {
+        this._states.forEach(state => {
+            state.close();
+            state = null;
+        });
+
+        this._states.clear();
+    }
+
+    /**
      * 新增狀態
      * @param states 狀態列表
      */
@@ -97,12 +109,12 @@ export class FsmBase<T> {
      */
     public changeState(id: number, ...params: any[]): void {
         if (id == this.currStateID) {
-            console.warn(`fsm change state to ${id} failed, change to the same state`, this.owner);
+            console.warn(`fsm change state ${id} failed, change the same state`, this.owner);
             return;
         }
 
         if (!this._states.has(id)) {
-            console.warn(`fsm change state to ${id} failed, state not found`, this.owner);
+            console.warn(`fsm change state ${id} failed, state not found`, this.owner);
             return;
         }
 
@@ -118,6 +130,6 @@ export class FsmBase<T> {
         this._currState = this._states.get(id);
         this._currState.onEnter(...params);
 
-        console.log(`fsm change state to ${id} succeed`, oldID, this.owner);
+        console.log(`fsm change state from ${oldID} to ${id} succeed`);
     }
 }

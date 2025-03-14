@@ -217,7 +217,7 @@ export class NetNode {
      * @param reason 錯誤原因
      */
     public closeConn(code?: number, reason?: string): void {
-        console.warn(`close conn ${this._connOpt.addr}`, code, reason);
+        console.warn(`close conn ${this._connOpt.addr}, ${code}:${reason}`);
 
         this.clearTimers();
 
