@@ -7,7 +7,7 @@ export class NetNode {
     /**
      * 連線狀態
      */
-    private _state: NetState = NetState.Closed;
+    private declare _state: NetState;
 
     /**
      * socket
@@ -17,7 +17,7 @@ export class NetNode {
     /**
      * socket是否已設定完畢
      */
-    private _ready: boolean = true;
+    private declare _ready: boolean;
 
     /**
      * 數據處理助手
@@ -27,12 +27,12 @@ export class NetNode {
     /**
      * 請求列表
      */
-    private _requests: NetReq[] = []
+    private declare _requests: NetReq[];
 
     /**
      * 協議處理列表
      */
-    private _handlers = new Map<NetCmd, NetHandler[]>();
+    private declare _handlers: Map<NetCmd, NetHandler[]>;
 
     /**
      * 連線參數
@@ -42,17 +42,17 @@ export class NetNode {
     /**
      * 心跳計時器
      */
-    private _heartbeatTimer: number = -1;
+    private declare _heartbeatTimer: number;
 
     /**
      * 斷線計時器
      */
-    private _disconnTimer: number = -1;
+    private declare _disconnTimer: number;
 
     /**
      * 重連計時器
      */
-    private _reconnTimer: number = -1;
+    private declare _reconnTimer: number;
 
     /**
      * 連線提示
@@ -71,9 +71,16 @@ export class NetNode {
      * @param hint 
      */
     constructor(socket: NetSocket, helper: NetHelper, hint?: NetHint) {
+        this._state = NetState.Closed;
         this._socket = socket;
+        this._ready = false;
         this._helper = helper;
+        this._requests = [];
+        this._handlers = new Map();
         this._hint = hint;
+        this._heartbeatTimer = -1;
+        this._disconnTimer = -1;
+        this._reconnTimer = -1;
     }
 
     /**
