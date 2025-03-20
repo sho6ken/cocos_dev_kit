@@ -17,7 +17,7 @@ export class FsmBase<T> {
     /**
      * 狀態列表
      */
-    protected _states = new Map<number, FsmState<T>>();
+    protected declare _states: Map<number, FsmState<T>>;
 
     /**
      * 當前狀態
@@ -39,6 +39,7 @@ export class FsmBase<T> {
             return;
         }
 
+        this._states = new Map();
         this._owner = owner;
     }
 
